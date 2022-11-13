@@ -77,7 +77,7 @@ build_and_push_to_docker_hub:
     passphrase: ${{ secrets.PASSPHRASE }} # Если ваш ssh-ключ защищён фразой-паролем
     script: |
           # Выполняет pull образа с DockerHub
-          sudo docker pull sergapav/942a68db31a4
+          sudo docker pull sergapav/s16:latest
           #остановка всех контейнеров
           sudo docker stop $(sudo docker ps -a -q)
-          sudo docker run --rm -d -p 5000:5000 sergapav/942a68db31a4
+          sudo docker run --rm -d -p 5000:5000 sergapav/s16:latest
